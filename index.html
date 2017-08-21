@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="Sublime">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="applicable-device"content="pc,mobile"/>
+<link href='css/css.css' rel='stylesheet'/>
+<title>QQ播放器</title>
+</head>
+<body>
+<div id='player-bg'>
+	<div class='bg-black control'>深空模式</div>
+	<div class='bg-white control'>纯白模式</div>
+	<div class='volumn-add' id='voladd'>音量 ++</div>
+	<div class='volumn-minus' id='volminus'>音量 --</div>
+</div>
+<div id='player-svg'>
+	<svg version="1.1" id="bg-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="4.14rem" height="7.26rem" viewBox="0 0 414 726" enable-background="new 0 0 414 726" xml:space="preserve">
+		<g>
+			<path fill="#7A6C55" d="M343.91,2.959c0,0.873-0.707,1.58-1.58,1.58h-47.402c-0.873,0-1.58-0.708-1.58-1.58V0.58
+			c0-0.873,0.707-1.58,1.58-1.58h47.402c0.873,0,1.58,0.708,1.58,1.58V2.959z"/>
+			<path class='svg-wrapper' fill="#958269" d="M354.684,3.876H62.577c-24.156,0-43.738,19.793-43.738,44.209v631.561c0,24.415,19.583,44.209,43.738,44.209
+			h292.107c24.155,0,43.739-19.794,43.739-44.209V48.085C398.423,23.669,378.839,3.876,354.684,3.876z M391.321,691.636H29.479V76.822
+			h361.842V691.636z"/>
+			<path class='svg-bg' fill="#FFFFFF" d="M351.317,5.729H65.573c-23.63,0-42.785,19.633-42.785,43.853v626.47c0,24.216,19.155,43.853,42.785,43.853
+			h285.744c23.63,0,42.784-19.637,42.784-43.853V49.582C394.102,25.362,374.947,5.729,351.317,5.729z M382.646,640.21H34.244V83.689
+			h348.402V640.21z"/>
+			<circle fill="#0B0808" cx="212.395" cy="39.165" r="6.846"/>
+			<circle fill="#3E3A39" cx="172.63" cy="63.39" r="3.687"/>
+			<circle fill="#595757" cx="172.631" cy="63.39" r="1.984"/>
+			<path fill="#595757" d="M240.572,63.39c0-1.454-1.211-2.633-2.707-2.633h-52.52c-1.495,0-2.708,1.179-2.708,2.633l0,0
+				c0,1.455,1.213,2.634,2.708,2.634h52.52C239.361,66.024,240.572,64.845,240.572,63.39L240.572,63.39z"/>
+			<path d="M237.807,63.39c0-0.696-1.084-1.259-2.422-1.259h-47.03c-1.339,0-2.424,0.563-2.424,1.259l0,0
+				c0,0.695,1.085,1.258,2.424,1.258h47.03C236.723,64.648,237.807,64.085,237.807,63.39L237.807,63.39z"/>
+		<g class='button'>
+			<path fill="#997951" d="M183.082,678.985c-0.444-17.543,13.324-29.759,29.759-29.759c4.63,0,8.991,1.086,12.896,2.97
+				c-4.286-2.393-9.218-3.768-14.477-3.768c-16.435,0-29.759,13.322-29.759,29.759c0,11.809,6.895,21.98,16.862,26.788
+				C189.253,699.889,183.366,690.159,183.082,678.985z"/>
+			<path fill="#997951" d="M226.78,652.72c9.113,5.087,15.227,14.813,15.282,25.99c0.09,17.758-13.322,29.759-29.758,29.759
+				c-4.628,0-8.99-1.086-12.897-2.97c4.287,2.393,9.218,3.768,14.477,3.768c16.437,0,29.759-13.322,29.759-29.759
+				C243.643,667.699,236.748,657.527,226.78,652.72z"/>
+		</g>
+			<path fill="#727171" d="M208.63,35.741c0,0-2.777,2.102-0.854,6.189c0,0,2.288,3.668,5.254,2.765c0,0-4.399-2.765-2.966-6.057
+				L208.63,35.741z"/>
+			<path opacity="0.5" fill="#FFFFFF" d="M341.41,0.386c0,0.382-0.861,0.692-1.924,0.692h-42.766c-1.063,0-1.924-0.31-1.924-0.692l0,0
+				c0-0.383,0.861-0.693,1.924-0.693h42.766C340.549-0.307,341.41,0.003,341.41,0.386L341.41,0.386z"/>
+		</g>
+	</svg>
+</div>
+<div id='player-container'>
+	<div class='container-bg' id='bg' style='background-image:url(image/singer/1.jpg)'>
+		<div class='bg-cover'></div>
+	</div>
+	<div class='container-music'>
+		<div class='music-header'>
+			<div class='header-signal'>
+				<ul class='signal-wrapper'>
+					<li class='first'></li><li></li><li></li><li></li><li></li>
+				</ul>
+			</div>
+			<div class='header-cate'>中国移动<i>&#xe608;</i></div>
+			<div class='header-time'>20:34</div>
+			<div class='header-gt'>
+				<div class='header-item'>
+					<ul class='item-list'>
+						<li class='first moon'><i>&#xe603;</i></li>
+						<li class='lock'><i>&#xe610;</i></li>
+						<li class='alarm'><i>&#xe60e;</i></li>
+						<li class='bluetooth'><i>&#xe60f;</i></li>
+					</ul>
+				</div>
+				<div class='header-battery'></div>
+				<div class='header-electric'><i>&#xe60b;</i></div>
+			</div>
+		</div>
+		<div class='music-info'>
+			<div class='info-logo' id='goMenu-1'><i>&#xe607;</i></div>
+			<div class='info-title' id='title'></div>
+			<div class='info-more' id='goLyric-1'>...</div>
+		</div>
+		<div class='music-menu'>
+			<ul class='menu-box' style='left:-100%'>
+				<li class='box-list'>
+					<div class='list-select' id='menu'>
+						<div class='select-china active'>
+							<p></p>
+						</div>
+						<div class='select-english'>
+							<p></p>
+						</div>
+						<div class='select-japan'>
+							<p></p>
+						</div>
+						<div class='select-calm'>
+							<p></p>
+						</div>
+					</div>
+					<div class='list-main' id='manu-list'>
+						<div class='main-china' style='left:0'>
+						</div>
+						<div class='main-english' style='left:-100%'>
+						</div>
+						<div class='main-japan' style='left:-100%'>
+						</div>
+						<div class='main-calm' style='left:-100%'>
+						</div>
+					</div>
+				</li>
+				<li class='box-perviewer'>
+					<div class='perviewer-singer' id='singer'></div>
+					<div class='perviewer-select'>
+						<div class='select-style'>标准</div>
+						<div class='select-dts'>dts</div>
+					</div>
+					<div class='perviewer-record' id='record'>
+						<img draggable="false"/>
+					</div>
+					<div class='perviewer-inner' id='pervlyric'>曲:<span>Jackiee</span></div>
+				</li>
+				<li class='box-lyric'>
+					<div class='lyric-box'>
+						<div class='lyric-wrapper' id = 'lyric'>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class='music-tab'>
+			<ul class='tab-list'>
+				<li class='first'></li><li></li><li></li>
+			</ul>
+		</div>
+		<div class='music-timer'>
+			<div class='timer-duration' id='current'>00:00</div>
+			<div class='timer-line'>
+				<div class='line-length'>
+					<div class='line-ball' id='line-ball'>
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div class='timer-total' id='duration'></div>
+		</div>
+		<div class='music-control'>
+			<div class='control-prev' id='prev'><i>&#xe60c;</i></div>
+			<div class='control-play' id='play'><i>&#xe601;</i></div>
+			<div class='control-pause' id='pause' style='display:none;'><i>&#xe609;</i></div>
+			<div class='control-next' id='next'><i>&#xe60c;</i></div>
+		</div>
+		<div class='music-rooter'>
+			<ul class='rooter-item'>
+				<li class='item-1' id='heart'><i>&#xe606;</i></li>
+				<li class='item-2' id='random'><i>&#xe604;</i></li>
+				<li class='item-2' id='order' style='display:none';><i>&#xe602;</i></li>
+				<li class='item-3' id='download'><i>&#xe605;</i></li>
+				<li class='item-4' id='goMenu-2'><i>&#xe611;</i></li>
+				<li class='item-5' id='goLyric-2'><i>&#xe60d;</i></li>
+			</ul>
+		</div>
+	</div>
+	<audio id = 'audio' src="http://cc.stream.qqmusic.qq.com/C100000eyims3MbmGS.m4a?fromtag=52">您的浏览器不支持html5的audio标签</audio>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src = 'js/data.js' type='text/javascript'></script>
+<script src = 'js/player.js' type='text/javascript'></script>
+<script src = 'js/face.js' type='text/javascript'></script>
+<script>
+	var $music = $('#player-container');
+	$music.player($music,{
+		'audio' : 'audio',			//播放器盒子
+		'box' : '.menu-box',		//大盒子模块
+		'boxTab' : '.tab-list', 	 //大盒子tab按键
+		'goMenu' : ['#goMenu-1','#goMenu-2'],  		//去歌单的按键id
+		'goLyric' : ['#goLyric-1','#goLyric-2'], 	//去歌词的按键id
+		'heart'	: '#heart',			//爱心按键
+		'download' : '#download',	//下载按键
+		'random' : '#random', 		//随机按钮
+		'order'	: '#order', 		//顺序
+		'menu' : '#menu',			//歌单id
+		'menuList' : '#manu-list',	//歌单列表id
+		'lyric' : '#lyric',  		//歌词表单
+		'titleShow' : '#title', 	//歌名显示id
+		'singerShow' : '#singer',	//歌星显示id
+		'recordShow' : '#record',	//歌星光盘显示id
+		'pervlyric' : '#pervlyric',	//前面的歌词
+		'bg' : '#bg',				//大背景歌星显示id
+		'play' : '#play',			//播放按钮id
+		'prev' : '#prev',			//上一首按钮id
+		'next' : '#next',			//下首按钮id
+		'pause' : '#pause',			//暂停按钮id
+		'line' :'#line-ball',		//播放时间长度条
+		'current' : '#current',		//播放目前时间
+		'duration' : '#duration',	//播放总时长
+		'voladd' : '#voladd',		//播放音量+
+		'volminus' : '#volminus'	//播放音量-
+	});
+</script>
+</body>
+</html>
